@@ -1,0 +1,121 @@
+﻿<script src="~/Scripts/custom-scripts/configuration/partial-scripts/platform-info.js?rndstr=<%= getRandomStr() %>"></script>
+
+<div>
+     Dodavanje nove platforme: 
+    <button id="add-platform-info" class="btn btn-custom" >Dodaj</button>
+</div>
+<br />
+<table id="platform-info-tbl" class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID platforme</th>
+            <th>Naziv platforme</th>
+            <th>Putanja ulaznog fajla</th>
+            <th>Format naziva fajla</th>
+            <th>Direktorij sa izlazne fajlove na FTP arhivskom serveru</th>
+            <th>Direktorij sa izvorne fajlove na FTP arhivskom serveru</th>
+            <th>FTP arhivski server</th>
+            <th>Port</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Interval za pristizanje fajlova(min)</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--dinamically populated-->
+    </tbody>
+</table>
+
+<!-- Modal delete confirmation -->
+<div id="confirm-delete-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="title">Brisanje platforme</h4>
+            </div>
+            <div class="modal-body">
+                <p hidden id="index" />
+                <p hidden id="platform-id" />
+                <p hidden id="platform-name" />
+                <p id="modal-msg">
+                    Da li želite obrisati platformu?
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom" data-dismiss="modal" id="confirm-delete-platform-btn">Potvrdi</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal add -->
+<div id="add-platform-info-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="title">Dodavanje platforme</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>ID platforme: </label> &nbsp;
+                    <input disabled type="text" class="form-control" id="platform-id-add" />
+                </div>
+                <div class="form-group">
+                    <label>Naziv platforme: </label> &nbsp;
+                    <input type="text" class="form-control" placeholder="Naziv platforme" id="platform" />
+                </div>
+                <div class="form-group">
+                    <label>Putanja ulaznog fajla: </label> &nbsp;
+                    <input type="text" class="form-control" id="input-file-path" placeholder="Putanja fajla" />
+                </div>
+                <div class="form-group">
+                    <label>Format naziva fajla: </label> &nbsp;
+                    <input type="text" class="form-control" id="input-file-format" placeholder="Format" />
+                </div>
+                <div class="form-group">
+                    <label>Direktorij sa izlazne fajlove na FTP arhivskom serveru: </label> &nbsp;
+                    <input type="text" class="form-control" id="output-directory" placeholder="Direktorij za izlazne fajlove" />
+                </div>
+                <div class="form-group">
+                    <label>Direktorij sa izvorne fajlove na FTP arhivskom serveru: </label> &nbsp;
+                    <input type="text" class="form-control" id="origin-directory" placeholder="Direktorij za izvorne fajlove"/>
+                </div>
+                <div class="form-group">
+                    <label>FTP arhivski server: </label> &nbsp;
+                    <input type="text" class="form-control" id="ftp-server" placeholder="FTP arhivski server" />
+                </div>
+                <div class="form-group">
+                    <label>Port: </label> &nbsp;
+                    <input type="text" class="form-control" id="port" placeholder="Port" />
+                </div>
+                <div class="form-group">
+                    <label>Username: </label> &nbsp;
+                    <input type="text" class="form-control" id="username" placeholder="Username" />
+                </div>
+                <div class="form-group">
+                    <label>Password: </label> &nbsp;
+                    <input type="text" class="form-control" id="password" placeholder="Password"/>
+                </div>
+                <div class="form-group">
+                    <label>Interval za pristizanje fajlova: </label> &nbsp;
+                    <input type="text" class="form-control" id="incoming-interval" placeholder="Interval" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom" id="confirm-add-platform-btn">Potvrdi</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,101 @@
+﻿    <script src="~/Scripts/custom-scripts/configuration/partial-scripts/field-validation.js?rndstr=<%= getRandomStr() %>"></script>
+
+
+<div class="form-inline">
+    <div class="form-group">
+        <select class="form-control" id="validation-platforms"></select>
+    </div>
+
+    <div class="form-group">
+        <button id="add-validation-field-btn" class="btn btn-custom">Dodaj</button>
+    </div>
+</div>
+<div id="field-validation-tbl">
+    <!--dinamically populated-->
+</div>
+
+
+<!-- Modal -->
+<div id="delete-field-validation-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="title">Brisanje validacije</h4>
+            </div>
+            <div class="modal-body">
+                <!--line for delete method-->
+                <input id="line" type="text" hidden />
+                <p id="modal-msg">Da li želite obrisati validaciju?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom" data-dismiss="modal" id="confirm-delete-btn">Potvrdi</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Modal confirm cdr process -->
+<div id="add-validation-field-modal" class="modal fade" role="dialog">
+    <input type="text" hidden id="session-id" />
+    <div class="modal-dialog modal-dialog-custom">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="title">Dodavanje validacije</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="form-group">
+                        <div class="label-div">Verzija ulaznog polja: *</div>
+                        <select class="form-control" id="input-field-version">
+                            <!--dinamically populated-->
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="label-div">Ulazno polje: *</div>
+                        <select class="form-control" id="input-field">
+                            <!--dinamically populated-->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="label-div">Pravilo validacije: * </div>
+                        <select class="form-control" id="validation-rules">
+                            <!--dinamically populated-->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="label-div">Datum od: *</div>
+                        <input type="datetime" id="date-from" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <div class="label-div">Datum od: *</div>
+                        <input type="datetime" id="date-to" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <div class="label-div">Vrijednosti za validaciju: </div>
+                        <input type="datetime" id="validation-fields" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <div class="label-div">Tip izlaznog fajla: </div>
+                        <select class="form-control" id="output-file-types">
+                            <!--dinamically populated-->
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-custom" id="confirm-add-validation-field-btn">Potvrdi</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="confirm-update-cancel-btn">Odustani</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

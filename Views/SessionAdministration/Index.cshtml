@@ -1,0 +1,165 @@
+﻿
+
+    <script src="~/Scripts/custom-scripts/session-administration/session-administration.js?rndstr=<%= getRandomStr() %>"></script>
+    <script src="~/Scripts/custom-scripts/helper-methods.js?rndstr=<%= getRandomStr() %>"></script>
+
+<!--navigation filter menu-->
+<ul class="nav nav-tabs" id="session-admin-tabs" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="by-parameters-tab" data-toggle="tab" href="#by-parameters-div" role="tab" aria-controls="by-parameters-div" aria-selected="true">Po ostalim parametrima: </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="by-session-id-tab" data-toggle="tab" href="#by-session-id-div" role="tab" aria-controls="by-session-id-div" aria-selected="false">Po broju sesije: </a>
+    </li>
+</ul>
+<div class="tab-content" id="session-admin-tabs-content">
+    <!--search by multiple parameters-->
+    <div class="tab-pane fade active" id="by-parameters-div" role="tabpanel" aria-labelledby="by-parameters-tab">
+        <div class="form-inline">
+            <div class="form-group">
+                <div class="label-div">Pretraga datuma: * </div> &nbsp;
+                <select class="form-control" id="date-type">
+                    <option value="1">Po datumu procesiranja</option>
+                    <option value="2">Po datumu saobraćaja</option>
+                </select> &nbsp;
+            </div>
+            <div class="form-group">
+                <div class="label-div">Period od: *</div> &nbsp;
+                <input type="datetime" id="date-from" class="form-control" />  &nbsp;
+            </div>
+            <div class="form-group">
+                <div class="label-div">Period do: *</div> &nbsp;
+                <input type="datetime" id="date-to" class="form-control" /> &nbsp;
+            </div>
+            <div class="form-group">
+                <div class="label-div">Platforma: *</div> &nbsp;
+                <select class="form-control" id="platform"></select> &nbsp;
+            </div>
+            <div class="form-group">
+                <div class="label-div">Naziv fajla: </div> &nbsp;
+                <input type="text" id="file-name" class="form-control" placeholder="naziv fajla" /> &nbsp;
+            </div>
+            <div class="form-group">
+                <div for="last-step-filter-chose">Procesirani korak: </div>
+                <select class="form-control" id="last-step-filter-chose">
+                    <option value="2" selected="selected">Isključeno</option>
+                    <option value="1">Uključeno</option>
+                </select> &nbsp;
+            </div>
+            <div class="form-group processing-step-div">
+                <div class="label-div">Operator: *</div> &nbsp;
+                <select class="form-control" id="operator-sign">
+                    <option value="=">=</option>
+                    <option value="=>">=></option>
+                    <option value="<="><=</option>
+                    <option value="<"><</option>
+                    <option value=">">></option>
+                </select> &nbsp;
+            </div>
+            <div class="form-group processing-step-div">
+                <div class="label-div">Korak: *</div> &nbsp;
+                <select class="form-control" id="last-processed-step">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select> &nbsp;
+            </div>
+            <div class="form-group">
+                <button class="btn btn-custom search-sessions-btn" id="get-sessions-by-params-btn">Pretraži</button>&nbsp;
+                <button class="btn btn-custom search-sessions-btn" id="prepare-delete-sessions-btn">Obriši</button>&nbsp;
+                <button class="btn btn-custom search-sessions-btn" id="prepare-reprocess-sessions-btn">Reprocesiraj</button>
+            </div>
+        </div>
+        <div class="table-custom">
+            <table id="sessions-by-params-tbl" class="table table-hover">
+                <thead>
+                    <tr>
+                        <!-- select all boxes -->
+                        <th><input type="checkbox" name="select-all" id="select-all-by-params" /></th>
+                        <th>Id sesije</th>
+                        <th>Datum sesije</th>
+                        <th>Datum fajla</th>
+                        <th>Putanja do fajla</th>
+                        <th>Ime datoteke</th>
+                        <th>Zadnji uspješan korak</th>
+                        <th>Datum posljednje izmjene</th>
+                        <th>Broj redova u fajlu</th>
+                        <th>Broj za tarifiranje</th>
+                        <th>Broj odbačenih</th>
+                        <th>Broj spornih</th>
+                        <th>Broj zapisa sa greškom</th>
+                    </tr>
+                </thead>
+                <tbody id="sessions-by-params-tbl-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--search by session id-->
+    <div class="tab-pane fade" id="by-session-id-div" role="tabpanel" aria-labelledby="by-session-id-tab">
+        <div class="form-inline">
+            <div class="form-group">
+                <div class="label-div">Id sesije: *</div> &nbsp;
+                <input class="form-control" type="text" id="session-id" placeholder="id sesije" /> &nbsp;
+            </div>
+            <div class="form-group">
+                <button class="btn btn-custom search-sessions-btn" id="get-sessions-by-id">Pretraži</button>&nbsp;
+                <button class="btn btn-custom search-sessions-btn" id="prepare-delete-sessions-id-btn">Obriši</button>&nbsp;
+                <button class="btn btn-custom search-sessions-btn" id="prepare-reprocess-sessions-id-btn">Reprocesiraj</button>
+            </div>
+        </div>
+
+        <div class="table-custom">
+            <table id="sessions-by-id-tbl" class="table table-hover">
+                <thead>
+                    <tr>
+                        <!-- select all boxes -->
+                        <th><input type="checkbox" id="select-by-id-all" /></th>
+                        <th>Id sesije</th>
+                        <th>Datum sesije</th>
+                        <th>Datum fajla</th>
+                        <th>Putanja do fajla</th>
+                        <th>Ime datoteke</th>
+                        <th>Zadnji uspješan korak</th>
+                        <th>Datum posljednje izmjene</th>
+                        <th>Broj redova u fajlu</th>
+                        <th>Broj za tarifiranje</th>
+                        <th>Broj odbačenih</th>
+                        <th>Broj spornih</th>
+                        <th>Broj zapisa sa greškom</th>
+                    </tr>
+                </thead>
+                <tbody id="sessions-by-id-tbl-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+   
+
+<!-- preprocess session confirm modal -->
+<div id="reprocess-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="title">Reprocesiranje sesija</h4>
+            </div>
+            <div class="modal-body">
+                <p id="modal-msg">Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom" data-dismiss="modal" id="confirm-btn">Potvrdi</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+            </div>
+        </div>
+    </div>
+</div>

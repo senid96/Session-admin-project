@@ -1,0 +1,34 @@
+﻿<script src="~/Scripts/custom-scripts/configuration/partial-scripts/output-fields.js?rndstr=<%= getRandomStr() %>"></script>
+
+
+Dodavanje izlaznog polja: <button class="btn btn-custom" id="add-field-btn">Dodaj</button>
+<br />
+<br />
+<ul class='list-group' id="output-fields-list">
+    <!--dinamically populated-->
+</ul>
+
+
+<!--add new output field Modal -->
+<div id="add-output-field-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="title">Dodavanje izlaznog polja</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-inline">
+                    <label>Naziv izlaznog polja: </label> &nbsp;
+                    <input type="text" class="form-control" id="output-field" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom" id="confirm-add-output-field-btn">Potvrdi</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+            </div>
+        </div>
+
+    </div>
+</div>

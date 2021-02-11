@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!--jquery-->
+    <script src="~/Scripts/jquery.min.js"></script>
+
+    <!--bootstrap CDN-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="~/Content/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <!--toastr-->
+    <script src="~/Scripts/toastr.min.js"></script>
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
+
+    <!--datatables-->
+    <script type="text/javascript" charset="utf8" src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="~/Scripts/dataTables.bootstrap.min.js"></script>
+    <link href="~/Content/dataTables.bootstrap.min.css" rel="stylesheet" />
+
+    <!--jqueryUI-->
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+
+    <!--datetime picker addon-->
+    <script src="~/Scripts/jquery-ui-timepicker-addon.min.js" integrity="sha512-s5u/JBtkPg+Ff2WEr49/cJsod95UgLHbC00N/GglqdQuLnYhALncz8ZHiW/LxDRGduijLKzeYb7Aal9h3codZA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/Content/jquery-ui-timepicker-addon.min.css" integrity="sha512-LT9fy1J8pE4Cy6ijbg96UkExgOjCqcxAC7xsnv+mLJxSvftGVmmc236jlPTZXPcBRQcVOWoK1IJhb1dAjtb4lQ==" crossorigin="anonymous" />
+    <script src="~/Scripts/jquery-ui-timepicker-addon-i18n.min.js" integrity="sha512-t2ZIJH81Sh+SWSb4BuA9en4j6fwja+sYOEXbqoepD9lJ+efUGD94gSWqdmgQchGmPez2ojECq4Fm6bKMUAzIiQ==" crossorigin="anonymous"></script>
+    
+
+    <!--configuration-->
+    <script>
+        // Disable caching of AJAX responses
+        $.ajaxSetup({
+            cache: false
+        });
+
+        //toastr look define
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-bottom-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+    </script>
+</head>
+<body>
+    @Html.Partial("Navigation")
+
+
+    <div class="body-content body-custom">
+        <div class="loader" hidden>
+            <div class="spinner"></div>
+            <br />
+            <span>Učitavanje..</span>
+        </div>
+        @RenderBody()
+        <footer class="footer navbar-fixed-bottom footer-custom">
+            <p class="text-center">&copy; @DateTime.Now.Year - Medijacija</p>
+        </footer>
+    </div>
+</body>
+</html>

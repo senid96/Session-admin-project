@@ -1,0 +1,16 @@
+﻿<ul class="list-group">
+    <li class="list-group-item"><b>ReplaceNumber</b> - normira ulazno polje tako što izbaci pozivni broj "387". Ulazni parametar je ulazno polje.</li>
+    <li class="list-group-item"><b>GetANumberMsgGateway</b> - mapira polje Description ukoliko je MessageType ="APP MT" i polje From sadrži samo brojeve. Inače mapira polje From.</li>
+    <li class="list-group-item"><b>MergeDateTime</b> - vrši spajanje polja za datum i polja za vrijeme u jedno polje. Ulazni parametri su ulazna polja sa datumom i vremenom.</li>
+    <li class="list-group-item"><b>ConvertSubscriberType</b> - mapira tip pretplatnika. Ulazni parametar je polje iz kojeg se čitaju potrebni podaci.</li>
+    <li class="list-group-item"><b>ReplaceDateTime</b> - radi konverziju ulaznog datuma u format koji se zadaje kao ulazni parametar. Ulazni parametri su ulazno polje i format datuma.</li>
+    <li class="list-group-item"><b>CropDateTime</b> - iz ulaznog polja izdvaja dio koji se odnosi na datum i vrijeme. Ulazni parametar je ulazno polje.</li>
+    <li class="list-group-item"><b>CorrectAmountVirtualSim</b> -  postavlja vrijednost Amount sa null na 0 i mijenja zarez u tačku kod decimalnog zapisa.</li>
+    <li class="list-group-item"><b>ChangeToServiceCode</b> - za vrijednost ulaznog parametra koja se razlikuje od Service Code, postavlja Originating Number na vrijednost Service Code.</li>
+    <li class="list-group-item"><b>ModifyBillingCode</b> - vrši modifikaciju billing code-a tako što spoji service code, ulazni parametar i cijenu.</li>
+    <li class="list-group-item"><b>CalculateDuration</b> - transformacija računa izlazno polje kao ulazno polje*100 za mnaplatu.</li>
+    <li class="list-group-item"><b>SetRecordTypeMcommerce</b> - na osnovu ulaznog parametra mapira na izlazne vrijednosti mnaplata ili sms.</li>
+    <li class="list-group-item"><b>SetRecordType</b> - mapira vrijednost parametra ("None", "Voice","SMS","MMS","VOD","Streaming","Download","GPRS","PZMO","mNaplata","VirtualSIM" ) na izlazno polje.</li>
+    <li class="list-group-item"><b>SetSubscriberType</b> - mapira vrijednost parametra ("prepaid", "postpaid" i "none") na izlazno polje. Ulazni parametar je parametar na koji se mapira izlazno polje.</li>
+    <li class="list-group-item"><b>SetSource</b> - mapira vrijednost parametra (ID platforme) na izlazno polje.</li>
+</ul>

@@ -1,0 +1,25 @@
+﻿<script src="~/Scripts/custom-scripts/configuration/partial-scripts/additional-configuration.js?rndstr=<%= getRandomStr() %>"></script>
+
+<div id="additional-conf">
+    <!--dinamically populated-->
+</div>
+
+<!-- Modal -->
+<div id="confirm-save-config-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="title">Potvrda snimanja konfiguracije</h4>
+            </div>
+            <div class="modal-body">
+                <p id="modal-msg">Da li želite snimiti konfiguraciju?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom"  id="confirm-save-btn">Potvrdi</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+            </div>
+        </div>
+    </div>
+</div>

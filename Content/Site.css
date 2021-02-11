@@ -1,0 +1,233 @@
+﻿body {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+body {
+    font-family: Helvetica;
+}
+
+.navbar-custom {
+    background-image: url("images/nav-background.png");
+    box-shadow: 1px 2px 5px #888888;
+}
+
+.bht-logo {
+    height: 25px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 13px;
+    width: 70px;
+}
+
+
+.nav-custom {
+    float: right;
+    margin-right: 50px;
+}
+
+.body-custom {
+    margin-top: 20px;
+}
+
+.nav-custom ul li:hover a, .nav ul li:hover.hover a {
+    color: #fe8300;
+    background-color:white;
+}
+
+.nav-custom ul li a {
+    color: #fff;
+}
+
+.footer-custom {
+    background: #dedede;
+    height: 30px;
+    padding-top: 7px;
+}
+
+.btn-custom {
+    color: #fff;
+    background-color: #fe8300;
+    border-color: #646f82 !important;
+    border-style: none;
+}
+
+.paginate_button.active a {
+    background-color: #fe8300 !important;
+}
+
+
+.loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 100;
+    opacity: 0.8;
+    text-align: center
+}
+
+.spinner {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #fe8300;
+    width: 150px;
+    height: 150px;
+    margin-left: 47%;
+    margin-top: 15%;
+    z-index: 100;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.search-sessions-btn {
+    margin-top: 19px;
+}
+.panel-body-custom {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+.panel-heading-custom {
+    margin-bottom: 0!important;
+    padding-bottom: 0!important;
+}
+#filter-menu a {
+    cursor: pointer;
+}
+#filter-by-session-id {
+    display: none;
+    margin-bottom: 35px;
+}
+#filter-by-parameters {
+    display: block;
+    margin-bottom:35px;
+}
+.selected{
+    border-radius: 2px;
+    background-color: lightgray;
+}
+
+.active-tab a {
+    color: #fe8300 !important;
+    background-color: white;
+}
+
+
+.label-div{
+    padding-left:10px;
+}
+
+.delete-btn {
+    visibility: hidden;
+    margin-top: 19px;
+}
+.reprocess-btn {
+    visibility: hidden;
+    margin-top: 19px;
+}
+#alarm-history-div {
+    display: none;
+}
+#alarms-history-tbl{
+    margin-top:35px;
+}
+#search-history-alarm-btn {
+    margin-top: 19px;
+}
+
+.tab-custom{
+    padding-left:0px;
+    margin-left:-31px;
+}
+
+#get-active-alarms-btn, #open-modal-conifrm-btn {
+    margin-bottom: 35px;
+    margin-left: 8px;
+}
+
+#active-alarms-div {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+#alarm-history-div {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+.table-custom {
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 35px;
+}
+
+#processed-records{
+    display:none;
+}
+
+#processed-field-rule, #unprocessed-field-rule{
+    width: 270px;
+}
+#session-info {
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    height:50px;
+}
+
+.nav-session-info a {
+    display: inline-block;
+    pointer-events: none;
+}
+.modal-dialog-custom{
+    width:1200px!important;
+}
+.input-custom {
+    width: 280px !important;
+}
+
+#configuration-tabs, #suspended-tabs, #session-admin-tabs, #alarm-tabs {
+    background-color: lightgray;
+    border-bottom: 1px;
+    margin-bottom:20px;
+}
+
+.nav-tabs li a {
+    color:gray;
+}
+
+.form-control-custom{
+    display:inline-block!important;
+}
+
+#configuration-tabs-content{
+    margin:10px;
+}

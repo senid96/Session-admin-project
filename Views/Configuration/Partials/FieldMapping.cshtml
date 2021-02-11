@@ -1,0 +1,76 @@
+﻿<script src="~/Scripts/custom-scripts/configuration/partial-scripts/mapping.js?rndstr=<%= getRandomStr() %>"></script>
+
+
+
+
+<div class="form-inline">
+    <label>Platforma: </label>&nbsp;
+    <select class="form-control" id="platform-mapping">
+        <!--dinamically populated-->
+    </select>&nbsp;
+
+    <label>Verzija ulaznog polja: </label>&nbsp;
+    <select class="form-control" id="input-version-mapping">
+        <!--dinamically populated-->
+    </select> &nbsp;
+
+    <label>Ulazno polje: </label>&nbsp;
+    <select class="form-control" id="input-field-mapping">
+        <!--dinamically populated-->
+    </select> &nbsp;
+
+    <label>Tranformacija: </label>&nbsp;
+    <select class="form-control" id="transformation-mapping">
+        <!--dinamically populated-->
+    </select>&nbsp;
+
+    <label>Izlazna polja: </label>&nbsp;
+    <select class="form-control" id="output-field-mapping">
+        <!--dinamically populated-->
+    </select>&nbsp;
+
+    <label>Parametar za transformaciju: </label>&nbsp;
+    <input type="text" id="transform-param" class="form-control" />&nbsp;
+
+    <button class="btn btn-custom" id="map-btn">Mapiraj</button>
+</div>
+
+<hr />
+
+<table class="table table-hover" id="mapping-table">
+    <thead>
+        <tr>
+            <th>Naziv ulaznog polja</th>
+            <th>Transformacije i parametri</th>
+            <th>Naziv izlaznog polja</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!--dinamically-->
+    </tbody>
+</table>
+
+
+<!--modal delete-->
+<div id="delete-mapping-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="title">Brisanje mapiranja</h4>
+            </div>
+            <div class="modal-body">
+                <input id="map-platform" hidden />
+                <input id="map-index" hidden />
+                <p>Da li ste sigurni da želite obrisati odabrano mapiranje?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom" id="confirm-mapping-delete-btn">Potvrdi</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Odustani</button>
+            </div>
+        </div>
+
+    </div>
+</div>

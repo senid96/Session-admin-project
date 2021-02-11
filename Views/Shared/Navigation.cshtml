@@ -1,0 +1,12 @@
+﻿<div class="navbar navbar-fixed-top navbar-custom">
+    <img src="~/Content/images/logo.png" alt="bhtelecom" class="bht-logo" />
+    <div class="navbar-collapse collapse nav-custom">
+        <ul class="nav navbar-nav">
+            <li>@Html.RouteLink("Početna", new { }, new { @href = "http://inf240pms-as/pms/" })</li>
+            <li id="alarms-nav-tab" >@Html.ActionLink("Alarmi", "Index", "Alarms")</li>
+            <li id="configuration-nav-tab">@Html.ActionLink("Konfiguracija medijacije", "Index", "Configuration")</li>
+            <li id="suspended-nav-tab">@Html.ActionLink("Uređivanje spornih zapisa", "Index", "Suspended")</li>
+            <li id="session-nav-tab">@Html.ActionLink("Administracija sesija", "Index", "SessionAdministration")</li>
+        </ul>
+    </div>
+</div>

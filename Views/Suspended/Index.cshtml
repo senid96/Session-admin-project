@@ -1,0 +1,159 @@
+﻿<script src="~/Scripts/custom-scripts/helper-methods.js?rndstr=<%= getRandomStr() %>"></script>
+<script src="~/Scripts/custom-scripts/suspended/suspended.js?rndstr=<%= getRandomStr() %>"></script>
+
+<!--navigation filter menu-->
+<ul class="nav nav-tabs" id="suspended-tabs" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link" id="unprocessed-records-tab" data-toggle="tab" href="#unprocessed-records-div" role="tab" aria-controls="unprocessed-records-div" aria-selected="false">Neobrađeni sporni zapisi</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" id="processed-records-tab" data-toggle="tab" href="#processed-records-div" role="tab" aria-controls="processed-records-div" aria-selected="true">Obrađeni sporni zapisi</a>
+    </li>
+</ul>
+<div class="tab-content" id="suspended-tabs-content">
+    <!--unprocessed suspended files-->
+    <div class="tab-pane fade active" id="unprocessed-records-div" role="tabpanel" aria-labelledby="unprocessed-records-tab">
+        <div class="form-inline">
+            <div class="form-group">
+                <div class="label-div">Platforma: *</div> &nbsp;
+                <select class="form-control" id="unprocessed-platform"></select> &nbsp;
+            </div>
+            <div class="form-group">
+                <div class="label-div">Period od: *</div> &nbsp;
+                <input type="datetime" id="unprocessed-date-from" class="form-control" />  &nbsp;
+            </div>
+
+            <div class="form-group">
+                <div class="label-div">Period do: *</div> &nbsp;
+                <input type="datetime" id="unprocessed-date-to" class="form-control" /> &nbsp;
+            </div>
+            <div class="form-group">
+                <div class="label-div">Pravilo-polje: *</div> &nbsp;
+                <select class="form-control" id="unprocessed-field-rule">
+                    <option value='Sva pravila'>Sva pravila</option>
+                </select> &nbsp;
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-custom search-sessions-btn" id="unprocessed-search-btn">Osvježi pretragu</button>&nbsp;
+            </div>
+        </div>
+
+        <div class="table-custom">
+            <table id="unprocessed-tbl" class="table table-hover">
+                <thead>
+                    <tr>
+                        <!-- select all boxes -->
+                        <th>Id sesije</th>
+                        <th>Izvor saobraćaja</th>
+                        <th>Naziv fajla</th>
+                        <th>Datum sesije</th>
+                        <th>Broj zapisa</th>
+                        <th>Zapisi za tarifiranje</th>
+                        <th>Sporni zapisi</th>
+                        <th>Odbačeni zapisi</th>
+                        <th>Zapisi s greškom</th>
+                        <th>Status</th>
+                        <th>Uredi</th>
+                        <th>Procesiraj</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--processed suspended files-->
+    <div class="tab-pane fade" id="processed-records-div" role="tabpanel" aria-labelledby="processed-records-tab">
+        <div class="form-inline">
+            <div class="form-group">
+                <div class="label-div">Platforma: *</div> &nbsp;
+                <select class="form-control" id="processed-platform"></select> &nbsp;
+            </div>
+            <div class="form-group">
+                <div class="label-div">Period od: *</div> &nbsp;
+                <input type="datetime" id="processed-date-from" class="form-control" />  &nbsp;
+            </div>
+
+            <div class="form-group">
+                <div class="label-div">Period do: *</div> &nbsp;
+                <input type="datetime" id="processed-date-to" class="form-control" /> &nbsp;
+            </div>
+            <div class="form-group">
+                <div class="label-div">Pravilo-polje: *</div> &nbsp;
+                <select class="form-control" id="processed-field-rule">
+                    <option value='Sva pravila'>Sva pravila</option>
+                </select> &nbsp;
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-custom search-sessions-btn" id="processed-search-btn">Pretraži</button>&nbsp;
+            </div>
+        </div>
+        <!--session table-->
+        <div class="table-custom">
+            <table id="processed-tbl" class="table table-hover">
+                <thead>
+                    <tr>
+                        <!-- select all boxes -->
+                        <th>Id sesije</th>
+                        <th>Izvor saobraćaja</th>
+                        <th>Naziv fajla</th>
+                        <th>Datum sesije</th>
+                        <th>Broj zapisa</th>
+                        <th>Zapisi za tarifiranje</th>
+                        <th>Sporni zapisi</th>
+                        <th>Odbačeni zapisi</th>
+                        <th>Zapisi s greškom</th>
+                        <th>Status</th>
+                        <th>Pregled</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal confirm cdr process -->
+<div id="confirm-cdr-process-modal" class="modal fade" role="dialog">
+    <input type="text" hidden id="session-id" />
+    <div class="modal-dialog modal-dialog-custom">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="title">Procesiranje?</h4>
+            </div>
+            <div class="modal-body">
+                <h4>Da li ste sigurni da želite procesirati odabrani fajl?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom" id="confirm-fields-process-btn" data-dismiss="modal">Potvrdi</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="confirm-update-cancel-btn">Odustani</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Modal processed cdrs view -->
+<div id="processed-cdrs-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-custom">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="title">Pregled procesiranih CDR-ova</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-hover" id="processed-cdr-tbl"></table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-custom" data-dismiss="modal" id="confirm-update-cancel-btn">Zatvori</button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,81 @@
+﻿<script src="~/Scripts/custom-scripts/configuration/configuration.js?rndstr=<%= getRandomStr() %>"></script>
+<script src="~/Scripts/custom-scripts/helper-methods.js?rndstr=<%= getRandomStr() %>"></script>
+
+<!--navigation filter menu-->
+<ul class="nav nav-tabs" id="configuration-tabs" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link" id="platform-info-tab" data-toggle="tab" data-partial-name="PlatformInfo" href="#platform-info-div" role="tab" aria-controls="platform-info-div" aria-selected="false">Podaci o platformi</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="field-version-tab" data-toggle="tab" data-partial-name="FieldVersion" href="#field-version-div" role="tab" aria-controls="field-version-div" aria-selected="false">Verzije ulaznih polja</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" id="output-fields-tab" data-toggle="tab" data-partial-name="OutputFields" href="#output-fields-div" role="tab" aria-controls="output-fields-div" aria-selected="true">Izlazna polja</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="field-parse-tab" data-toggle="tab" data-partial-name="FieldParser" href="#field-parse-div" role="tab" aria-controls="field-parse-div" aria-selected="false">Parsiranje polja</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="field-validation-tab" data-toggle="tab" data-partial-name="FieldValidation" href="#field-validation-div" role="tab" aria-controls="field-validation-div" aria-selected="false">Validacija polja</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="field-mapping-tab" data-toggle="tab" data-partial-name="FieldMapping" href="#field-mapping-div" role="tab" aria-controls="field-mapping-div" aria-selected="false">Mapiranje polja</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="additional-conf-tab" data-toggle="tab" data-partial-name="AdditionalConfiguration" href="#additional-conf-div" role="tab" aria-controls="additional-conf-div" aria-selected="false">Dodatne postavke</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="val-rule-tab" data-toggle="tab" data-partial-name="ValRule" href="#val-rule-div" role="tab" aria-controls="val-rule-div" aria-selected="false">Pravila validacije</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="transformation-tab" data-toggle="tab" data-partial-name="Transformation" href="#transformation-div" role="tab" aria-controls="transformation-div" aria-selected="false">Transformacije</a>
+    </li>
+
+
+
+
+
+</ul>
+<div class="tab-content" id="configuration-tabs-content">
+
+    <!--output fields-->
+    <div class="tab-pane fade active" id="output-fields-div" role="tabpanel" aria-labelledby="output-fields-tab">
+    </div>
+
+    <!--field validations-->
+    <div class="tab-pane fade" id="field-validation-div" role="tabpanel" aria-labelledby="field-validation-tab">
+    </div>
+
+    <!--validation rules-->
+    <div class="tab-pane fade" id="val-rule-div" role="tabpanel" aria-labelledby="val-rule-tab">
+
+    </div>
+
+    <!--transformations-->
+    <div class="tab-pane fade" id="transformation-div" role="tabpanel" aria-labelledby="transformation-tab">
+
+    </div>
+
+    <!--dodatne postavke-->
+    <div class="tab-pane fade" id="additional-conf-div" role="tabpanel" aria-labelledby="additional-conf-tab">
+
+    </div>
+
+
+    <!--platform informations-->
+    <div class="tab-pane fade active" id="platform-info-div" role="tabpanel" aria-labelledby="platform-info-tab">
+    </div>
+
+    <!--field parser fields-->
+    <div class="tab-pane fade active" id="field-parse-div" role="tabpanel" aria-labelledby="field-parse-tab">
+    </div>
+
+    <!--input field versions-->
+    <div class="tab-pane fade active" id="field-version-div" role="tabpanel" aria-labelledby="field-version-tab">
+    </div>
+
+    <!--mapiranje polja-->
+    <div class="tab-pane fade active" id="field-mapping-div" role="tabpanel" aria-labelledby="field-mapping-tab">
+    </div>
+</div>
+
